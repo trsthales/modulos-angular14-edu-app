@@ -141,3 +141,21 @@
   opacity: 0.9;
   font-size: 0.9em;
 }
+
+.github-link {
+  color: #1976d2;
+  font-weight: bold;
+  text-decoration: none;
+  word-break: break-all;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #f0f7ff;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.github-link:hover {
+  background: #e3f2fd;
+  text-decoration: underline;
+}
