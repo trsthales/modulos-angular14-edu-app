@@ -1,0 +1,51 @@
+<!-- 
+  APP.COMPONENT.HTML - Template do Componente Raiz
+  =================================================
+  
+  Este template serve como layout principal da aplicação.
+  Contém o menu de navegação e o router-outlet para exibir as rotas.
+-->
+
+<div class="app-container">
+  <!-- Cabeçalho da aplicação -->
+  <header class="app-header">
+    <div class="container">
+      <h1>{{ title }}</h1>
+      <p class="subtitle">Aprenda definitivamente sobre Módulos no Angular 14</p>
+    </div>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav class="nav-menu">
+    <div class="container">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        🏠 Home
+      </a>
+      <a routerLink="/produtos" routerLinkActive="active">
+        📦 Produtos (Lazy Loading)
+      </a>
+      <a routerLink="/usuarios" routerLinkActive="active">
+        👥 Usuários (Lazy Loading)
+      </a>
+    </div>
+  </nav>
+
+  <!-- Área de conteúdo principal -->
+  <main class="main-content">
+    <div class="container">
+      <!-- 
+        ROUTER OUTLET
+        O conteúdo das rotas será exibido aqui
+        Quando navegamos para /produtos, o componente de produtos aparece aqui
+      -->
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div class="container">
+      <p>💡 Aplicação educacional sobre Módulos no Angular 14</p>
+    </div>
+  </footer>
+</div>

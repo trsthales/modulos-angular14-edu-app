@@ -1,0 +1,41 @@
+<!-- PRODUTO-DETALHE.COMPONENT.HTML -->
+
+<div class="detalhe-container">
+  <h2>📦 Detalhes do Produto #{{ produtoId }}</h2>
+
+  <div class="info-box">
+    <h3>🔍 Roteamento em Feature Modules</h3>
+    <p>
+      Esta página demonstra como o roteamento funciona dentro de um Feature Module.
+      A rota completa é <code>/produtos/{{ produtoId }}</code>.
+    </p>
+    <ul>
+      <li>Base path: <code>/produtos</code> (definido em app.routes.ts)</li>
+      <li>Child path: <code>:id</code> (definido em produtos.module.ts)</li>
+      <li>URL final: <code>/produtos/{{ produtoId }}</code></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📚 Como funciona:</h3>
+    <ol>
+      <li>No <strong>app.routes.ts</strong>, definimos a rota lazy: <code>/produtos</code></li>
+      <li>No <strong>produtos.module.ts</strong>, usamos <code>RouterModule.forChild()</code></li>
+      <li>As rotas filhas são relativas ao path base</li>
+      <li>O Angular combina os paths automaticamente</li>
+    </ol>
+  </div>
+
+  <div class="success-box">
+    <h3>✅ Informações sobre este produto</h3>
+    <p><strong>ID do Produto:</strong> {{ produtoId }}</p>
+    <p>
+      Em uma aplicação real, você usaria este ID para buscar os dados do produto
+      de um serviço ou API.
+    </p>
+  </div>
+
+  <button (click)="voltar()" class="btn-voltar">
+    ← Voltar para Lista de Produtos
+  </button>
+</div>

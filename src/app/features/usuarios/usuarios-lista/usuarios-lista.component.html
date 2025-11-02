@@ -1,0 +1,52 @@
+<!-- USUARIOS-LISTA.COMPONENT.HTML -->
+
+<div class="usuarios-container">
+  <h2>👥 Lista de Usuários</h2>
+
+  <div class="info-box">
+    <h3>🔄 Outro Feature Module</h3>
+    <p>
+      Este é o <strong>UsuariosModule</strong>, outro Feature Module independente
+      que também usa lazy loading.
+    </p>
+    <p>
+      Cada feature module pode ter suas próprias rotas, componentes e lógica,
+      mantendo a aplicação organizada e modular.
+    </p>
+  </div>
+
+  <div class="warning-box">
+    <h3>⚡ Benefícios do Lazy Loading</h3>
+    <ul>
+      <li>✓ Menor bundle inicial - Carrega mais rápido</li>
+      <li>✓ Melhor performance - Código dividido em chunks</li>
+      <li>✓ Carregamento sob demanda - Só carrega quando necessário</li>
+      <li>✓ Melhor organização - Cada módulo é independente</li>
+    </ul>
+  </div>
+
+  <div class="usuarios-table">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Função</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.id }}</td>
+          <td>{{ usuario.nome }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>
+            <span class="badge" [class.admin]="usuario.role === 'Admin'">
+              {{ usuario.role }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

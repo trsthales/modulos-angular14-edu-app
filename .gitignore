@@ -1,0 +1,23 @@
+# Dependências
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Compilação
+dist/
+tmp/
+out-tsc/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Angular
+.angular/

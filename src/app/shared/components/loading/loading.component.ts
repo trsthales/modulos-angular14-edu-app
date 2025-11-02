@@ -1,0 +1,13 @@
+/**
+ * LOADING.COMPONENT.TS
+ * Componente de loading reutilizável
+ */
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-loading',
+  templateUrl: './loading.component.html',
+  styleUrls: ['./loading.component.css']
+})
+export class LoadingComponent {}

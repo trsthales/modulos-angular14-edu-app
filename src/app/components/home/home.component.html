@@ -1,0 +1,108 @@
+<!-- HOME.COMPONENT.HTML -->
+
+<div class="home-container">
+  <div class="hero-section">
+    <h1>🎓 Bem-vindo ao Guia Completo de Módulos Angular 14</h1>
+    <p class="hero-description">
+      Aprenda os conceitos fundamentais de módulos no Angular através de exemplos práticos e bem documentados.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h3>📚 O que você vai aprender:</h3>
+    <ul>
+      <li>O que são módulos NgModule e por que usá-los</li>
+      <li>Diferenças entre Root Module, Feature Modules, Shared Module e Core Module</li>
+      <li>Como implementar Lazy Loading para otimizar performance</li>
+      <li>Boas práticas na organização de módulos</li>
+      <li>Quando usar declarations, imports, exports e providers</li>
+    </ul>
+  </div>
+
+  <div class="modules-grid">
+    <div class="module-card" *ngFor="let module of [modulesInfo.root, modulesInfo.feature, modulesInfo.shared, modulesInfo.core]">
+      <div class="module-icon">{{ module.icon }}</div>
+      <h3>{{ module.title }}</h3>
+      <p>{{ module.description }}</p>
+      <ul class="features-list">
+        <li *ngFor="let feature of module.features">✓ {{ feature }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="success-box">
+    <h3>🚀 Conceitos Fundamentais</h3>
+    <div class="concepts">
+      <div class="concept-item">
+        <h4>Declarations</h4>
+        <p>Componentes, diretivas e pipes que pertencem ao módulo. Cada um pode ser declarado em apenas UM módulo.</p>
+        <code>declarations: [AppComponent, HeaderComponent]</code>
+      </div>
+
+      <div class="concept-item">
+        <h4>Imports</h4>
+        <p>Outros módulos cujas funcionalidades são necessárias neste módulo.</p>
+        <code>imports: [BrowserModule, RouterModule, FormsModule]</code>
+      </div>
+
+      <div class="concept-item">
+        <h4>Exports</h4>
+        <p>Componentes, diretivas e pipes que podem ser usados por outros módulos que importarem este módulo.</p>
+        <code>exports: [CommonModule, CardComponent, FormatPipe]</code>
+      </div>
+
+      <div class="concept-item">
+        <h4>Providers</h4>
+        <p>Serviços que estarão disponíveis para injeção de dependências. No Angular 14+, prefira usar providedIn: 'root'.</p>
+        <code>providers: [AuthService, DataService]</code>
+      </div>
+
+      <div class="concept-item">
+        <h4>Bootstrap</h4>
+        <p>Componente raiz que será inicializado. Apenas no módulo raiz (AppModule).</p>
+        <code>bootstrap: [AppComponent]</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <h3>⚠️ Regras Importantes</h3>
+    <ul>
+      <li><strong>BrowserModule</strong> deve ser importado APENAS no AppModule. Em feature modules, use <strong>CommonModule</strong>.</li>
+      <li>Um componente/diretiva/pipe pode ser declarado em apenas <strong>UM</strong> módulo.</li>
+      <li>Use <strong>forRoot()</strong> no AppModule e <strong>forChild()</strong> em feature modules para configurar rotas.</li>
+      <li>O Core Module deve ser importado <strong>apenas uma vez</strong> no AppModule.</li>
+      <li>O Shared Module deve usar <strong>exports</strong> para disponibilizar seus recursos.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🧭 Navegação</h3>
+    <p>Explore as diferentes seções desta aplicação para ver módulos em ação:</p>
+    <div class="navigation-links">
+      <a routerLink="/produtos" class="nav-link">
+        <span class="link-icon">📦</span>
+        <strong>Produtos</strong>
+        <small>Feature Module com Lazy Loading</small>
+      </a>
+      <a routerLink="/usuarios" class="nav-link">
+        <span class="link-icon">👥</span>
+        <strong>Usuários</strong>
+        <small>Feature Module com Lazy Loading</small>
+      </a>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>💡 Lazy Loading</h3>
+    <p>
+      Os módulos de Produtos e Usuários usam <strong>Lazy Loading</strong>, o que significa que
+      eles são carregados apenas quando você navega para suas rotas. Isso melhora significativamente
+      o tempo de carregamento inicial da aplicação.
+    </p>
+    <p>
+      Abra o DevTools (F12) e vá para a aba Network para ver os chunks sendo carregados quando
+      você navega para essas rotas pela primeira vez!
+    </p>
+  </div>
+</div>

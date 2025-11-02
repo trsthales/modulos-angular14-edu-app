@@ -1,0 +1,39 @@
+<!-- PRODUTOS-LISTA.COMPONENT.HTML -->
+
+<div class="produtos-container">
+  <h2>📦 Lista de Produtos</h2>
+  
+  <div class="info-box">
+    <h3>💡 Feature Module com Lazy Loading</h3>
+    <p>
+      Este componente faz parte do <strong>ProdutosModule</strong>, um Feature Module 
+      que é carregado sob demanda (lazy loading).
+    </p>
+    <p>
+      Abra o DevTools (F12) → Network e recarregue a página inicial. Você verá que este módulo
+      NÃO é carregado até você clicar em "Produtos" no menu.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>📚 Características deste Feature Module:</h3>
+    <ul>
+      <li>✓ Usa <code>CommonModule</code> (não BrowserModule)</li>
+      <li>✓ Usa <code>RouterModule.forChild()</code> (não forRoot)</li>
+      <li>✓ Carregado apenas quando navegamos para /produtos</li>
+      <li>✓ Possui suas próprias rotas e componentes</li>
+      <li>✓ Importa o SharedModule para reutilizar componentes</li>
+    </ul>
+  </div>
+
+  <div class="produtos-grid">
+    <div class="produto-card" *ngFor="let produto of produtos">
+      <h3>{{ produto.nome }}</h3>
+      <p class="descricao">{{ produto.descricao }}</p>
+      <p class="preco">R$ {{ produto.preco | number:'1.2-2' }}</p>
+      <a [routerLink]="['/produtos', produto.id]" class="btn-detalhes">
+        Ver Detalhes
+      </a>
+    </div>
+  </div>
+</div>
