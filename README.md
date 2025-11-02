@@ -3,6 +3,14 @@
 ## 📚 Sobre este Projeto
 
 Esta é uma aplicação educacional completa criada para ensinar **definitivamente** sobre Módulos no Angular 14. Cada arquivo está extensivamente comentado e organizado para facilitar o aprendizamento.
+
+Dicas Importantes:
+Leia na ordem: README.md → INSTALACAO.md → GUIA-RAPIDO.md
+Explore o código: Cada arquivo tem comentários explicativos
+Use o console: Veja os logs de carregamento dos módulos
+DevTools é seu amigo: Observe o lazy loading na aba Network
+Pratique: Faça os exercícios do EXERCICIOS.md
+
 Veja a aplicação rodando no Vercel:
 https://modulos-angular14-edu-app.vercel.app/
 
